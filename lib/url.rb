@@ -2,8 +2,9 @@
 require 'open-uri'
 require 'net/http'
 require 'json'
+#apiendpoint = /rkSpells.json
 
-class Url
+class Url 
 
     URL = "https://donmallory.tech/rkSpells.json"
 
@@ -17,7 +18,6 @@ class Url
     def all_spells
         spells = JSON.parse(self.get_url)
         spells.collect do |url|
-            url["Charm"]
         end
     end
 end

@@ -4,7 +4,7 @@ class CLI
         system("clear")
         greeting
 
-        while menu != "2"
+        while menu != '2'
         end
         end_program
     end
@@ -18,24 +18,31 @@ class CLI
     end
 
     def menu
-        puts "Would you like to see your spells?"
+        puts "What would you like to do? (Enter '1' or '2')"
         list_options
-        input = gets.chomp
+        input = gets.strip.downcase
         choose_option(input)
         return input
     end
 
     def list_options
-        puts "1. Yes"
-        puts "2. No"
+        puts <<-DOC.gsub /^\s*/, ''
+        1. See my spells
+        2. exit
+        DOC
     end
 
     def choose_option(option)
         case option
         when "1"
-            puts "Choose a spell!"
+            puts "Choose a spell: "
         end
+#         spell_list
 
-    end
+#     end
 
-end
+#     def spell_list
+#        #list spells with the api
+#     end
+
+# end
