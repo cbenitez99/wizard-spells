@@ -1,10 +1,12 @@
 class WIZARD::CLI
     # get inputs and display
+    def initialize
+        WIZARD::API.new.get_spell_data
+    end
+    
     def run
         system("clear")
         greeting
-        WIZARD::API
-
         while menu != '2'
         end
         end_program
@@ -20,7 +22,7 @@ class WIZARD::CLI
 
     def menu
         puts "What would you like to do? (Enter '1' or '2')"
-        list_options
+        list_options 
         input = gets.strip.downcase
         choose_option(input)
         return input
@@ -36,8 +38,16 @@ class WIZARD::CLI
     def choose_option(option)
         case option
         when "1"
-            puts "Choose a spell: "
+            puts "Here are you spells!: "
+            spell_list
         end
-        #spell_list
+        
+    end
+
+    def spell_list
+        WIZARD::Spells.all.each.with_index(1) do |spell, index|
+            puts "#{index}. #{spell.spell}"
+        end
+        
     end
 end

@@ -2,4 +2,5 @@
 
 require_relative "../config/environment.rb"
 
-WIZARD::API.new.get_spell_data
+
+WIZARD::CLI.new.run
