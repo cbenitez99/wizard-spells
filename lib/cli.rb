@@ -1,5 +1,4 @@
 class WIZARD::CLI
-    # get inputs and display
     def initialize
         WIZARD::API.new.get_spell_data
     end
@@ -14,7 +13,7 @@ class WIZARD::CLI
     end
     
     def greeting
-        puts "Welcome to Hogwarts, young wizard!"
+        puts "Welcome to Hogwarts, Wizard!"
         sleep(1)
     end
 
@@ -30,7 +29,7 @@ class WIZARD::CLI
     end
 
     def choose_spell
-        input = gets.chomp
+        input = gets.chomp.downcase
         if input == 'exit'
         end_program
         else input.to_i.between?(1, WIZARD::Spells.all.length)
@@ -42,6 +41,8 @@ class WIZARD::CLI
         WIZARD::Spells.all.each.with_index(1) do |spell, index|
             puts "#{index}. #{spell.spell}"
         end
-        puts "Type 'exit' to leave!"
+        puts "Choose a spell number for more info! OR Type 'exit' to leave!"
     end
+
+    
 end
