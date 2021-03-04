@@ -1,10 +1,9 @@
-require 'pry'
-
-class CLI < Url
-
+class WIZARD::CLI
+    # get inputs and display
     def run
         system("clear")
         greeting
+        WIZARD::API
 
         while menu != '2'
         end
@@ -41,15 +40,4 @@ class CLI < Url
         end
         #spell_list
     end
-
-    def all_spells
-        spells = JSON.parse(self.get_url)
-        spells.collect do |url|
-        end
-    end
-binding.pry
-    # def spell_list
-    #    #list spells with the api
-    # end
-
 end
