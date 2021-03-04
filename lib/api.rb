@@ -1,4 +1,3 @@
-#apiendpoint = /rkSpells.json
 class WIZARD::API
 
     def initialize
@@ -7,10 +6,8 @@ class WIZARD::API
 
     def get_spell_data
         puts "____----✨✨WOOOOOSH✨✨🧹----____"
-        spell_hash = HTTParty.get(@url)
-        spell_array = spell_hash[0..5]
+        spell_array = HTTParty.get(@url)
         self.create_spell_objects(spell_array)
-        
     end
 
     def create_spell_objects(spell_array)
@@ -18,5 +15,4 @@ class WIZARD::API
             WIZARD::Spells.new(spell_hash)
         end
     end
-
 end
