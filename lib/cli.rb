@@ -1,4 +1,6 @@
-class CLI
+require 'pry'
+
+class CLI < Url
 
     def run
         system("clear")
@@ -37,12 +39,17 @@ class CLI
         when "1"
             puts "Choose a spell: "
         end
-#         spell_list
+        #spell_list
+    end
 
-#     end
+    def all_spells
+        spells = JSON.parse(self.get_url)
+        spells.collect do |url|
+        end
+    end
+binding.pry
+    # def spell_list
+    #    #list spells with the api
+    # end
 
-#     def spell_list
-#        #list spells with the api
-#     end
-
-# end
+end

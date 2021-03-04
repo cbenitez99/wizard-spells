@@ -1,4 +1,4 @@
-class Spells < Url
+class Spells
     attr_accessor :spell, :effect, :type
     @@all = []
 
