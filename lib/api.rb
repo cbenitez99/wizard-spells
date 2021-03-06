@@ -5,7 +5,7 @@ class WIZARD::API
     end
 
     def get_spell_data
-        puts "____----✨✨WOOOOOSH✨✨🧹----____"
+        puts "___----✨✨WOOOOSH✨✨🧹----___"
         spell_array = HTTParty.get(@url)
         self.create_spell_objects(spell_array)
     end
