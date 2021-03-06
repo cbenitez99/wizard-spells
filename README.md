@@ -1,2 +1,2 @@
 # wizard-spells
-This program will list spells from Harry Potter and give the user minor details of a selected spell!
+This program will list spells from Harry Potter and give the user the effect of each spell!?
