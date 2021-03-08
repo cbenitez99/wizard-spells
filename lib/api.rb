@@ -1,4 +1,4 @@
-class WIZARD::API
+class API
 
     def initialize
         @url = "https://donmallory.tech/rkSpells.json"
@@ -12,7 +12,7 @@ class WIZARD::API
 
     def create_spell_objects(spell_array)
         spell_array.each do |spell_hash|
-            WIZARD::Spells.new(spell_hash)
+            Spells.new(spell_hash)
         end
     end
 end

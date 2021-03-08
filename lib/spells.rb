@@ -1,4 +1,4 @@
-class WIZARD::Spells
+class Spells
     #store data here
 
     @@all = []

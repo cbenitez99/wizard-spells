@@ -3,4 +3,4 @@
 require_relative "../config/environment.rb"
 
 
-WIZARD::CLI.new.run
+CLI.new.run

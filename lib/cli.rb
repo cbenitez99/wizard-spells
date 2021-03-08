@@ -1,6 +1,6 @@
-class WIZARD::CLI
+class CLI
     def initialize 
-        WIZARD::API.new.get_spell_data
+        API.new.get_spell_data
     end
     
     def run
@@ -24,7 +24,7 @@ class WIZARD::CLI
     end
 
     def spell_list #outputs spell list & ask user for spell to get more info on or exit
-        array_of_spells = WIZARD::Spells.all
+        array_of_spells = Spells.all
         array_of_spells_length = array_of_spells.length
 
         counter = 1
@@ -34,7 +34,7 @@ class WIZARD::CLI
             puts "#{counter}. #{spell_object.spell}"
             counter += 1
         end
-        puts "Choose a spell for more info! || Type 'exit' to leave!"
+        puts "Choose a spell number for more info! || Type 'exit' to leave!"
         input = gets.chomp.downcase
         if input == 'exit'
             end_program
@@ -45,7 +45,7 @@ class WIZARD::CLI
 
     def choose_spell(input)
         input_number = input.to_i
-        array_of_spells = WIZARD::Spells.all
+        array_of_spells = Spells.all
         array_of_spells_length = array_of_spells.length
         if input_number.between?(1, array_of_spells_length)
             index = input_number - 1
