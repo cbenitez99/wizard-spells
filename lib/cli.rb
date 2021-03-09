@@ -23,14 +23,14 @@ class CLI
         spell_list
     end
 
-    def spell_list #outputs spell list & ask user for spell to get more info on or exit
+    def spell_list 
         array_of_spells = Spells.all
         array_of_spells_length = array_of_spells.length
 
         counter = 1
         while counter <= array_of_spells_length
             index = counter - 1
-            spell_object = array_of_spells[index]  # array_of_spells[3] => {"spell":"Aguamenti","effect":"creates a gush of water from the tip of the spell caster’s wand","type":"Spell"},
+            spell_object = array_of_spells[index]  
             puts "#{counter}. #{spell_object.spell}"
             counter += 1
         end
@@ -48,6 +48,7 @@ class CLI
         array_of_spells = Spells.all
         array_of_spells_length = array_of_spells.length
         if input_number.between?(1, array_of_spells_length)
+
             index = input_number - 1
             spell_object = array_of_spells[index]
             spell_name = spell_object.spell
@@ -66,8 +67,11 @@ class CLI
         input = gets.chomp.downcase
         if input == 'n'
             end_program
+        elsif input == 'y'
+            menu 
         else 
-        menu 
+            puts "CHOOSE A VAILD OPTION YOU BUFFOON!"
+            reshow_menu
         end
     end
 

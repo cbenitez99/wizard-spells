@@ -1,5 +1,4 @@
 class Spells
-    #store data here
 
     @@all = []
 
