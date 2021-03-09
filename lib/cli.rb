@@ -70,7 +70,7 @@ class CLI
         elsif input == 'y'
             menu 
         else 
-            puts "CHOOSE A VAILD OPTION YOU BUFFOON!"
+            puts "CHOOSE A VALID OPTION YOU BUFFOON!"
             reshow_menu
         end
     end
