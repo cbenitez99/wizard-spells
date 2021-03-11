@@ -21,3 +21,4 @@ class Spells
     end
 
 end
+#write a method that will take user input and find and return all the spells that have the user input in their title. typing "A" returns all spells starting with A; return array

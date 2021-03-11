@@ -24,13 +24,10 @@ class CLI
     end
 
     def spell_list 
-        array_of_spells = Spells.all
-        array_of_spells_length = array_of_spells.length
-
         counter = 1
-        while counter <= array_of_spells_length
+        while counter <= Spells.all.length
             index = counter - 1
-            spell_object = array_of_spells[index]  
+            spell_object = Spells.all[index]  
             puts "#{counter}. #{spell_object.spell}"
             counter += 1
         end
@@ -45,14 +42,12 @@ class CLI
 
     def choose_spell(input)
         input_number = input.to_i
-        array_of_spells = Spells.all
-        array_of_spells_length = array_of_spells.length
-        if input_number.between?(1, array_of_spells_length)
+        if input_number.between?(1, Spells.all.length)
 
-            index = input_number - 1
-            spell_object = array_of_spells[index]
-            spell_name = spell_object.spell
-            spell_effect = spell_object.effect
+            index = input_number - 1 
+            spell_object = Spells.all[index]
+            spell_name = Spells.all[index].spell
+            spell_effect = Spells.all[index].effect
 
             puts "#{spell_name} effect :"
             puts "#{spell_effect}\n"
