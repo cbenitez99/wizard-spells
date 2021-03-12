@@ -2,7 +2,7 @@ class CLI
     def initialize 
         API.new.get_spell_data
     end
-    
+        
     def run
         greeting
         if menu != 'exit'
@@ -27,8 +27,7 @@ class CLI
         counter = 1
         while counter <= Spells.all.length
             index = counter - 1
-            spell_object = Spells.all[index]  
-            puts "#{counter}. #{spell_object.spell}"
+            puts "#{counter}. #{Spells.all[index].spell}"
             counter += 1
         end
         puts "Choose a spell number for more info! || Type 'exit' to leave!"
@@ -69,5 +68,4 @@ class CLI
         puts "Come Back Soon!"
         exit
     end
-
 end
