@@ -41,16 +41,11 @@ class CLI
     end
 
     def choose_spell(input)
-        input_number = input.to_i
-        if input_number.between?(1, Spells.all.length)
-
-            index = input_number - 1 
-            spell_object = Spells.all[index]
-            spell_name = Spells.all[index].spell
-            spell_effect = Spells.all[index].effect
-
-            puts "#{spell_name} effect :"
-            puts "#{spell_effect}\n"
+        input = input.to_i
+        if input.between?(1, Spells.all.length)
+            index = input - 1 
+            puts "#{Spells.all[index].spell} effect :"
+            puts "#{Spells.all[index].effect}\n"
         else
             puts "BAHAHA!!! THAT'S NOT A VALID NUMBER!?? COME BACK WHEN YOU DECIDE TO TAKE THINGS MORE SERIOUSLY."
         end
