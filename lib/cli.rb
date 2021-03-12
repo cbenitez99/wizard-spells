@@ -25,9 +25,9 @@ class CLI
 
     def spell_list 
         counter = 1
-        while counter <= Spells.all.length
+        while counter <= Spell.all.length
             index = counter - 1
-            puts "#{counter}. #{Spells.all[index].spell}"
+            puts "#{counter}. #{Spell.all[index].spell}"
             counter += 1
         end
         puts "Choose a spell number for more info! || Type 'exit' to leave!"
@@ -41,10 +41,10 @@ class CLI
 
     def choose_spell(input)
         input = input.to_i
-        if input.between?(1, Spells.all.length)
+        if input.between?(1, Spell.all.length)
             index = input - 1 
-            puts "#{Spells.all[index].spell} effect :"
-            puts "#{Spells.all[index].effect}\n"
+            puts "#{Spell.all[index].spell} effect :"
+            puts "#{Spell.all[index].effect}\n"
         else
             puts "BAHAHA!!! THAT'S NOT A VALID NUMBER!?? COME BACK WHEN YOU DECIDE TO TAKE THINGS MORE SERIOUSLY."
         end

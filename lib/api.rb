@@ -12,7 +12,7 @@ class API
 
     def create_spell_objects(spell_array)
         spell_array.each do |spell_hash|
-            Spells.new(spell_hash)
+            Spell.new(spell_hash)
         end
     end
 end
