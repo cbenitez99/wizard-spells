@@ -5,7 +5,7 @@ class API
     end
 
     def get_spell_data
-        puts "___----✨✨WOOOOSH✨✨🧹----___"
+        puts "___---✨✨WOOOSH✨✨🧹---___"
         spell_array = HTTParty.get(@url)
         self.create_spell_objects(spell_array)
     end
