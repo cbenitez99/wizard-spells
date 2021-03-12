@@ -2,7 +2,7 @@ class CLI
     def initialize 
         API.new.get_spell_data
     end
-        
+    
     def run
         greeting
         if menu != 'exit'
