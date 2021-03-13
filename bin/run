@@ -3,4 +3,21 @@
 require_relative "../config/environment.rb"
 
 
-CLI.new.run
+# CLI.new.run 
+cli = CLI.new
+
+cli.greeting
+puts "Enter 1 to list spells or 2 to search by name: "
+choice = gets.chomp
+if choice == '1'
+    cli.run_menu
+elsif choice == '2'
+    cli.run_letter
+else
+    puts "Invalid Choice."
+end
+
+
+
+
+

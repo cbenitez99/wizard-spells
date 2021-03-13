@@ -3,8 +3,8 @@ class CLI
         API.new.get_spell_data
     end
     
-    def run
-        greeting
+    def run_menu
+        
         if menu != 'exit'
             puts choose_spell
         else 
@@ -19,7 +19,7 @@ class CLI
 
     def menu
         puts "Here are your spells: "
-        sleep(2)
+        sleep(1)
         spell_list
     end
 
@@ -52,7 +52,7 @@ class CLI
     end
 
     def reshow_menu
-        puts "Would you like to return to the menu? ['Y'] or ['N']"
+        puts "Would you like to return to the list of spells? ['Y'] or ['N']"
         input = gets.chomp.downcase
         if input == 'n'
             end_program
@@ -67,5 +67,46 @@ class CLI
     def end_program
         puts "Come Back Soon!"
         exit
+    end
+############################
+    def ask_for_letter
+        puts "Type a letter to list spells that begin with that letter."
+        input = gets.chomp.downcase
+        begin
+            input = input.downcase
+        rescue
+            puts "Invalid input #{input}"
+            end_program
+        end
+        input 
+    end
+    
+    def find_spells(letter)
+        spell_array = Spell.all
+        
+        matching_spells = []
+        spell_array.each do |spell| 
+            name = spell.get_spell_name
+            if name[0].downcase == letter
+                matching_spells << spell
+            end
+        end
+        
+        matching_spells
+    end
+    
+    def run_letter
+        
+        letter = ask_for_letter
+        
+        matching_spells = find_spells(letter)
+        if matching_spells.length > 0                         
+            puts "Matching Spells : "
+            matching_spells.each do |spell|
+                puts "  #{spell.get_spell_name}"
+            end
+        else puts "No spells found starting with #{letter}"
+        end
+        end_program
     end
 end
