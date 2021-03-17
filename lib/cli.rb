@@ -68,7 +68,7 @@ class CLI
         puts "Come Back Soon!"
         exit
     end
-############################
+
     def ask_for_letter
         puts "Type a letter to list spells that begin with that letter."
         input = gets.chomp.downcase
@@ -82,14 +82,10 @@ class CLI
     end
     
     def find_spells(letter)
-        spell_array = Spell.all
-        
-        matching_spells = []
-        spell_array.each do |spell| 
+        spell_array = Spell.all  
+        matching_spells = spell_array.find_all do |spell| 
             name = spell.get_spell_name
-            if name[0].downcase == letter
-                matching_spells << spell
-            end
+            name[0].downcase == letter
         end
         
         matching_spells
