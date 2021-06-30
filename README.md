@@ -10,6 +10,7 @@ This program will list spells from Harry Potter and give the user the effect of 
 (I use VSCode so I just type "code ." in my terminal..without the quotation marks)
 
 ## START
-Open the terminal, go to the file directory of the copied repo, then type -> ruby bin/run  in the terminal and follow the prompts! 
+Open the terminal, go to the file directory of the copied repo, then type //=>     
+' open index.html '  
 
-Note: You don't have to type the word "ruby" before hand if you have priviledges enabled with -> chmod + x filename.
+Note: You may need to run 'npm install' to download dependencies.

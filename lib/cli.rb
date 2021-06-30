@@ -68,7 +68,7 @@ class CLI
         puts "Come Back Soon!"
         exit
     end
-
+############################
     def ask_for_letter
         puts "Type a letter to list spells that begin with that letter."
         input = gets.chomp.downcase
@@ -83,6 +83,16 @@ class CLI
     
     def find_spells(letter)
         spell_array = Spell.all  
+        # for (let i= 0; i<spell_array.length; i++){
+        # const name = spell.get_spell_name
+        # if (name[0].toLowerCase() === letter){
+        #     return spell_array[i]
+
+        ##JS RULES!!
+        # }
+        #   
+        # }
+        # 
         matching_spells = spell_array.find_all do |spell| 
             name = spell.get_spell_name
             name[0].downcase == letter
